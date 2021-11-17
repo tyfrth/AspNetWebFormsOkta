@@ -70,6 +70,9 @@ namespace AspNetWebFormsOkta
                             new Claim("id_token", tokenResponse.IdentityToken),
                             new Claim("access_token", tokenResponse.AccessToken)
                         };
+                        
+                        System.Diagnostics.Debug.WriteLine($"Access Token: {tokenResponse.AccessToken}");
+                        System.Diagnostics.Debug.WriteLine($"ID Token: {tokenResponse.IdentityToken}");
 
                         n.AuthenticationTicket.Identity.AddClaims(claims);
                     },
